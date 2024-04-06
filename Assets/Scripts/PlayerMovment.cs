@@ -82,8 +82,6 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         movementDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-        //log test text
-        Debug.Log("Test: " + isGrounded);
         if (isGrounded)
             rb.AddForce(movementDirection.normalized * movementSpeed* 10f, ForceMode.Force);
         else if (!isGrounded)
