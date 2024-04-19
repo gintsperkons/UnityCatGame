@@ -27,7 +27,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
+    public LayerMask Default;
     bool isGrounded;
+    bool isGroundedDefault;
 
     float horizontalInput;
     float verticalInput;    
@@ -46,7 +48,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics.Raycast(transform.position, UnityEngine.Vector3.down, playerHeight * 0.1f + 1f, whatIsGround);
-        Debug.DrawRay(transform.position, UnityEngine.Vector3.down * (playerHeight * 0.1f + 0.2f), Color.red);
+        isGroundedDefault = Physics.Raycast(transform.position, UnityEngine.Vector3.down, playerHeight * 0.1f + 1f, Default);
+        isGrounded = isGrounded || isGroundedDefault;
         GetInput();
         SpeedControl();
 
