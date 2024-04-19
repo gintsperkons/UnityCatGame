@@ -1,13 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameHUD : MonoBehaviour
 {
+    [System.Serializable]
+    public struct FinalMessages
+    {
+        public int scoreMinimum;
+        public string message;
+    }
+
+
+    
+    [SerializeField] public FinalMessages[] finalMessages;
+
+
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject optionsMenuUI;
+    public GameObject gameOverUI;
+    public TextMeshProUGUI finalScoreText;
+    public TextMeshProUGUI finalMessageText;
 
 
 
@@ -15,6 +31,8 @@ public class GameHUD : MonoBehaviour
     {
         Time.timeScale = 1f;
         pauseMenuUI.SetActive(false);
+        optionsMenuUI.SetActive(false);
+        gameOverUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         GameIsPaused = false;
     }
@@ -42,6 +60,24 @@ public class GameHUD : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         optionsMenuUI.SetActive(false);
+    }
+
+    public void GameOver(int score)
+    {
+        Time.timeScale = 0f;
+        gameOverUI.SetActive(true);
+        finalScoreText.text = "Final Score: " + score.ToString();
+        int currentMinimum = -1;
+        for (int i = 0; i < finalMessages.Length; i++)
+        {
+            if (score >= finalMessages[i].scoreMinimum && finalMessages[i].scoreMinimum > currentMinimum)
+            {
+                currentMinimum = finalMessages[i].scoreMinimum;
+                finalMessageText.text = finalMessages[i].message;
+            }
+        }
+
+
     }
 
     public void QuitGame()

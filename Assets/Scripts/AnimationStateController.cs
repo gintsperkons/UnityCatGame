@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,24 +20,30 @@ public class AnimationStateController : MonoBehaviour
     void Update()
     {
         //get horizontal and vertical velocity from rigidbody
-        float horizontalVelocity = Player.GetComponent<Rigidbody>().velocity.magnitude;
+        float horizontalVelocity = Math.Abs(Player.GetComponent<Rigidbody>().velocity.x) + Math.Abs(Player.GetComponent<Rigidbody>().velocity.z);
+ 
         float verticalVelocity = Player.GetComponent<Rigidbody>().velocity.y;
 
 
 
-        Debug.Log("Horizontal Velocity: " + horizontalVelocity);
-        Debug.Log("Vertical Velocity: " + verticalVelocity);
-
         //set animator parameters
         animator.SetFloat("SpeedH", horizontalVelocity);
         animator.SetFloat("SpeedV", verticalVelocity);
+        if(Input.GetKey(KeyCode.Space))
+        {
+            animator.SetBool("isJumping", true);
+        }
+        if(!Input.GetKey(KeyCode.Space))
+        {
+            animator.SetBool("isJumping", false);
+        }
 
 
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             animator.SetBool("isWalking", true);
         }
-        if(!Input.GetKey(KeyCode.W))
+        if(!(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)))
         {
             animator.SetBool("isWalking", false);
         }
