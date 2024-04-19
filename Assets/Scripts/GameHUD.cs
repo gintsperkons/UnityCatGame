@@ -62,7 +62,14 @@ public class GameHUD : MonoBehaviour
         optionsMenuUI.SetActive(false);
     }
 
-    public void GameOver(int score)
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1,LoadSceneMode.Single);
+    }
+
+    public void GameOver(int score, Transform restartPoint)
     {
         Time.timeScale = 0f;
         gameOverUI.SetActive(true);

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameHUD GameHUDManager;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timeText;
+    public Transform StartPoint;
     private int CurrentScore = 0;
     private int CurrentTime = 0;
     private bool continueTimeCount = true;
@@ -28,7 +29,7 @@ public class GameManager : MonoBehaviour
         if (CurrentTime >= 540)
         {
             continueTimeCount = false;
-            GameHUDManager.GameOver(CurrentScore);
+            GameHUDManager.GameOver(CurrentScore, StartPoint);
         }
         yield return new WaitForSeconds(5f);
         }
