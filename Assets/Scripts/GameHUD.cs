@@ -72,6 +72,7 @@ public class GameHUD : MonoBehaviour
     public void GameOver(int score, Transform restartPoint)
     {
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
         gameOverUI.SetActive(true);
         finalScoreText.text = "Final Score: " + score.ToString();
         int currentMinimum = -1;
