@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timeText;
     public Transform StartPoint;
     private int CurrentScore = 0;
-    private int CurrentTime = 0;
+    private int CurrentTime = -10;
     private bool continueTimeCount = true;
 
     // Start is called before the first frame update
