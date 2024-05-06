@@ -34,6 +34,7 @@ public class GameHUD : MonoBehaviour
         optionsMenuUI.SetActive(false);
         gameOverUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         GameIsPaused = false;
     }
 
@@ -42,6 +43,7 @@ public class GameHUD : MonoBehaviour
         Time.timeScale = 0f;
         pauseMenuUI.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         GameIsPaused = true;
     }
 
