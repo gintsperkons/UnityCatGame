@@ -9589,6 +9589,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1855289883}
+    - targetCorrespondingSourceObject: {fileID: 4946183482617126399, guid: 240642e40ef7677428a030106d4210a7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1855289884}
   m_SourcePrefab: {fileID: 100100000, guid: 240642e40ef7677428a030106d4210a7, type: 3}
 --- !u!1 &516572165 stripped
 GameObject:
@@ -25189,6 +25193,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6555610200268460466, guid: fb137926826512b48b40c74b03f914ae, type: 3}
+--- !u!114 &1547313600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547313595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfc80586dd5ddd48bd98bbc9211ab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1548943393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4533943726500818, guid: 2224b63330275e5478ef024b2913f937,
@@ -28949,6 +28965,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6555610200268460466, guid: fb137926826512b48b40c74b03f914ae, type: 3}
+--- !u!114 &1855289884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855289879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfc80586dd5ddd48bd98bbc9211ab93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1857404896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32537,6 +32565,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1547313599}
+    - targetCorrespondingSourceObject: {fileID: 4946183482617126399, guid: 240642e40ef7677428a030106d4210a7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1547313600}
   m_SourcePrefab: {fileID: 100100000, guid: 240642e40ef7677428a030106d4210a7, type: 3}
 --- !u!1 &2045725882 stripped
 GameObject:
