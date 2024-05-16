@@ -75,6 +75,7 @@ public class GameHUD : MonoBehaviour
     {
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         gameOverUI.SetActive(true);
         finalScoreText.text = "Final Score: " + score.ToString();
         int currentMinimum = -1;
